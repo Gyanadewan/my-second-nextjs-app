@@ -1,8 +1,9 @@
 import Image from "next/image"
+import Link from "next/link"
 
 
 function FoodCard({food}) {
-  const {dish_name,image_link} = food
+  const {id,dish_name,image_link} = food
   return (
    <div className="card bg-base-100  shadow-sm">
   <figure>
@@ -19,7 +20,9 @@ function FoodCard({food}) {
     <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
     <div className="card-actions justify-end">
       <div className="badge badge-outline">Fashion</div>
-      <div className="badge badge-outline">Products</div>
+      <Link href={`/menu/${id}`}>
+       <div className="badge badge-outline">Show Details</div>
+      </Link>
     </div>
   </div>
 </div>
